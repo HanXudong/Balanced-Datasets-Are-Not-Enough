@@ -27,7 +27,7 @@ from ae_adv_model import ObjectMultiLabelAdv, get_norm_layer, UnetGenerator
 from model import GenderClassifier
 
 ####### data preparation #########################
-object_id_map = pickle.load(open('../data/object_id.map'))
+object_id_map = pickle.load(open('../data/object_id.map', 'rb'))
 object2id = object_id_map['object2id']
 id2object = object_id_map['id2object']
 
