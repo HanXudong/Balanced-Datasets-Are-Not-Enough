@@ -29,10 +29,10 @@ from data_loader import ImSituVerbGender, ImSituVerbGenderFeature
 from model import VerbClassification, GenderClassifier
 
 ####### data preparation #########################
-verb_id_map = pickle.load(open('./data/verb_id.map'))
+verb_id_map = pickle.load(open('./data/verb_id.map'), 'rb')
 verb2id = verb_id_map['verb2id']
 id2verb = verb_id_map['id2verb']
-gender_ratios = pickle.load(open('./data/gender_ratios.p'))
+# gender_ratios = pickle.load(open('./data/gender_ratios.p'))
 
 def test(args, model, data_loader):
 
