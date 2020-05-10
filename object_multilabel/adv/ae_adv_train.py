@@ -25,7 +25,7 @@ from data_loader import CocoObjectGender
 from ae_adv_model import ObjectMultiLabelAdv
 from logger import Logger
 
-object_id_map = pickle.load(open('../data/object_id.map'))
+object_id_map = pickle.load(open('../data/object_id.map', 'rb'))
 object2id = object_id_map['object2id']
 id2object = object_id_map['id2object']
 

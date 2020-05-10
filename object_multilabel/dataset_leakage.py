@@ -26,7 +26,7 @@ from tqdm import tqdm as tqdm
 from data_loader import CocoObjectGender
 from model import GenderClassifier
 
-object_id_map = pickle.load(open('./data/object_id.map'))
+object_id_map = pickle.load(open('./data/object_id.map', 'rb'))
 object2id = object_id_map['object2id']
 id2object = object_id_map['id2object']
 
@@ -152,7 +152,7 @@ def train_genderclassifier(model, num_epochs, optimizer, train_loader, test_load
 
     best_score = 0
 
-    for epoch in xrange(1, num_epochs + 1):
+    for epoch in range(1, num_epochs + 1):
 
         # train
         train_loss, train_acc = epoch_pass(epoch, train_loader, model, optimizer, True, print_every)

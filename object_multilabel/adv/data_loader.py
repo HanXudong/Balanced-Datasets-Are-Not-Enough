@@ -23,21 +23,21 @@ class CocoObjectGender(data.Dataset):
         self.args = args
 
         print("loading %s annotations.........." % self.split)
-        self.ann_data = pickle.load(open(os.path.join(annotation_dir, split+".data")))
+        self.ann_data = pickle.load(open(os.path.join(annotation_dir, split+".data"), 'rb'))
 
         if args.balanced and split == 'train':
             balanced_subset = pickle.load(open("../data/{}_ratio_{}.ids".format(split, \
-                args.ratio)))
+                args.ratio), 'rb'))
             self.ann_data = [self.ann_data[i] for i in balanced_subset]
 
         if balanced_val and split == 'val':
             balanced_subset = pickle.load(open("../data/{}_ratio_{}.ids".format(split, \
-                args.ratio)))
+                args.ratio), 'rb'))
             self.ann_data = [self.ann_data[i] for i in balanced_subset]
 
         if balanced_test and split == 'test':
             balanced_subset = pickle.load(open("../data/{}_ratio_{}.ids".format(split, \
-                args.ratio)))
+                args.ratio), 'rb'))
             self.ann_data = [self.ann_data[i] for i in balanced_subset]
 
         print(len(self.ann_data))
@@ -63,7 +63,7 @@ class CocoObjectGender(data.Dataset):
                 self.gender_ann[:, 0])[0]), len(np.nonzero(self.gender_ann[:, 1])[0])))
 
         if args.blackout_face:
-            self.faces = pickle.load(open('./data/{}_faces.p'.format(split)))
+            self.faces = pickle.load(open('./data/{}_faces.p'.format(split), 'rb'))
 
     def __getitem__(self, index):
         if self.args.no_image:
