@@ -2,3 +2,7 @@
 verb_classification/data/of500_images_resized/2
 *.jpg
 verb_classification/data/of500_images_resized/temp.txt
+*.pyc
+*.tar
+*.DESKTOP-CNFECVR
+*.txt
