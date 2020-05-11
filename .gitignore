@@ -6,3 +6,4 @@ verb_classification/data/of500_images_resized/temp.txt
 *.tar
 *.DESKTOP-CNFECVR
 *.txt
+*.pth
