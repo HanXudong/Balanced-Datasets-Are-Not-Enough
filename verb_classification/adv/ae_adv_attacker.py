@@ -26,10 +26,10 @@ from data_loader import ImSituVerbGender, ImSituVerbGenderFeature
 from ae_adv_model import VerbClassificationAdv, get_norm_layer, UnetGenerator
 from adv_model import GenderClassifier
 
-verb_id_map = pickle.load(open('../data/verb_id.map'))
+verb_id_map = pickle.load(open('../data/verb_id.map', 'rb'))
 verb2id = verb_id_map['verb2id']
 id2verb = verb_id_map['id2verb']
-gender_ratios = pickle.load(open('../data/gender_ratios.p'))
+# gender_ratios = pickle.load(open('../data/gender_ratios.p'))
 
 
 def generate_image_feature(split, image_features_path, data_loader, encoder):

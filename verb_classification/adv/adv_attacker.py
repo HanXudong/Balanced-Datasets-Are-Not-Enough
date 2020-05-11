@@ -25,7 +25,7 @@ from tqdm import tqdm as tqdm
 from data_loader import ImSituVerbGender, ImSituVerbGenderFeature
 from adv_model import VerbClassificationAdv, GenderClassifier
 
-verb_id_map = pickle.load(open('../data/verb_id.map'))
+verb_id_map = pickle.load(open('../data/verb_id.map', 'rb'))
 verb2id = verb_id_map['verb2id']
 id2verb = verb_id_map['id2verb']
 
