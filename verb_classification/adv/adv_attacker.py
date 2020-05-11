@@ -321,7 +321,7 @@ def train_attacker(num_epochs, optimizer, attacker, encoder, train_loader, test_
     best_model_epoch = 1
     best_score = 0.0
 
-    for epoch in xrange(1, num_epochs + 1):
+    for epoch in range(1, num_epochs + 1):
 
         # train
         loss, train_task_acc = epoch_pass(epoch, train_loader, attacker, encoder, optimizer, True, feature_type, print_every)
