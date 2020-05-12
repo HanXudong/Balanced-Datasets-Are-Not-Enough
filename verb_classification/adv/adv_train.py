@@ -6,7 +6,7 @@ import itertools
 from sklearn.metrics import average_precision_score
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import f1_score
-from tqdm import tqdm as tqdm
+from tqdm.notebook import tqdm as tqdm
 from PIL import Image
 
 import torch.nn.functional as F
